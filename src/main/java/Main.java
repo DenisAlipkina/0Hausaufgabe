@@ -5,7 +5,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 
 public class Main {
 
-    /*Bespieleingabe: line from 0,2 to 7,8 + Enter + (Strg + D)*/
+    /*Bespieleingabe: line from 0,3 to 7,8 + Enter + (Strg + D)*/
     public static void main(String[] args) throws Exception {
         CharStream input = null;
         // Pick an input stream (filename from commandline or stdin)
