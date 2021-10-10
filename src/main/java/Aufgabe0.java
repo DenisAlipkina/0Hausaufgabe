@@ -3,7 +3,7 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 
-public class Main {
+public class Aufgabe0 {
 
     /*Bespieleingabe: line from 0,3 to 7,8 + Enter + (Strg + D)*/
     public static void main(String[] args) throws Exception {
