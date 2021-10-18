@@ -1,0 +1,21 @@
+image: maven:latest
+#inspired by https://gitlab.com/gitlab-examples/maven/simple-maven-example
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+Build:
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS compile
+
+Time-IP-Filter:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe1Test test
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "We don´t need this here"
