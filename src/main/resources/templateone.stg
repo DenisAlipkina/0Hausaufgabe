@@ -1,0 +1,3 @@
+templateone(x)::=<<
+<x:{token |<token.text> line:<token.line>}; separator="\n">
+>>
