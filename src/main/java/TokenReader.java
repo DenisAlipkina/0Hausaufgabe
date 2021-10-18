@@ -1,6 +1,6 @@
-import Inf2.Result.Result;
-import Inf2.function.Function;
-import Inf2.tuple.Tuple;
+import fpinjava.common.Function;
+import fpinjava.common.Result;
+import fpinjava.common.Tuple;
 import helpclasses.Input;
 import org.antlr.v4.runtime.ANTLRFileStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
