@@ -1,7 +1,9 @@
-import Inf2.Result.Result;
-import Inf2.function.Function;
+import fpinjava.common.Effect;
+import fpinjava.common.Function;
+import fpinjava.common.Result;
+import fpinjava.common.Stream;
 import helpclasses.Input;
-import inout.Effect;
+
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.Token;
@@ -14,13 +16,9 @@ public class App {
     public static Function<CharStream,Lexer> lexer = IPFilter::new;
 
     public static void main(String[] args) {
-        try {
-            String input = "src/main/java/textfile.txt";
-            Result<Input<Token>> rTokenReader = TokenReader.lexFile(input, lexer);
-            rTokenReader.forEach(rt->rt.stream().forEach(f));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String input = "src/main/java/textfile.txt";
+        Result<Input<Token>> rTokenReader = TokenReader.lexFile(input, lexer);
+        rTokenReader.forEach(rt->rt.stream().forEach(f));
     }
 
     /*Zu testenden Lexer hier im switch case bearbeiten*/
