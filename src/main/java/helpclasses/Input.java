@@ -1,15 +1,15 @@
 package helpclasses;
 
-import Inf2.Result.Result;
-import Inf2.tuple.Tuple;
-import fpjava.Stream;
 
-import java.io.IOException;
+import fpinjava.common.Result;
+import fpinjava.common.Stream;
+import fpinjava.common.Tuple;
+
 
 public interface Input<A> extends AutoCloseable {
     Result<Tuple<A, Input<A>>> read();
 
-    default Stream<A> stream() throws IOException {
+    default Stream<A> stream() {
         return Stream.<A,Input<A>>unfold(this, Input::read);
     }
 }
