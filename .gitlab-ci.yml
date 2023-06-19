@@ -15,6 +15,47 @@ Time-IP-Filter:
   script:
     - mvn -Dtest=Aufgabe1Test test
 
+Halstead-Task:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe2Test test
+
+SyntaxErkenner-Task1:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe3Test$testAufgabe1 test
+
+SyntaxErkenner-Task2:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe3Test$testAufgabe2 test
+
+SyntaxErkenner-Task3:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe3Test$testAufgabe3 test
+
+Interpreter-Task2:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe4Test$testAufgabe2 test
+
+Interpreter-Task3:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe4Test$testAufgabe3 test
+
+Interpreter-Task4:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe4Test$testAufgabe4 test
+
+CallGraph-Task2:
+  stage: test
+  script:
+    - mvn -Dtest=Aufgabe5Test$testAufgabe2 test
+
+
 deploy-prod:
   stage: deploy
   script:

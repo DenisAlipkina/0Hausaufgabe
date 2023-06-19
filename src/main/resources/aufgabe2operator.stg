@@ -1,0 +1,29 @@
+halstead(map1, map2, N1, N2, n1, n2, N, n, V, D, E)::=<<
+<operator(map1)>
+<operand(map2)>
+<parameter(N1, N2, n1, n2)>
+<metrics(N, n, V, D, E)>
+>>
+operator(map1)::=<<
+Operatoren-----------------------
+<map1.keys:{m | <m> : <map1.(m)>}; separator="\n">
+>>
+operand(map2)::=<<
+Operanden-----------------------
+<map2.keys:{m | <m> : <map2.(m)>}; separator="\n">
+>>
+parameter(N1, N2, n1, n2)::=<<
+Parameter-----------------------
+Anzahl aller Operatoren: <N1; separator="\n">
+Anzahl aller Operanden: <N2; separator="\n">
+Anzahl verschiedener Operatoren: <n1; separator="\n">
+Anzahl verschiedener Operanden: <n2; separator="\n">
+>>
+metrics(N, n, V, D, E)::=<<
+Metriken-----------------------
+Programmlänge: <N; separator="\n">
+Vokabulargröße: <n; separator="\n">
+Volumen des Programms: <V; separator="\n">
+Schwierigkeitsgrad ein Programm zu verstehen: <D; separator="\n">
+Implementierungsaufwand: <E; separator="\n">
+>>

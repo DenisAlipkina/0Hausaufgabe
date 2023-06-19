@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class App {
     /*Zu testenden Lexer hier eingeben*/
-    public static Function<CharStream,Lexer> lexer = IPFilter::new;
+    public static Function<CharStream,Lexer> lexer = HalsteadLexer::new;
 
     public static void main(String[] args) {
         String input = "src/main/java/textfile.txt";
@@ -27,11 +27,14 @@ public class App {
         int pos = t.getCharPositionInLine();
         String text = t.getText();
         switch(t.getType()) {
-            case IPFilter.IP4:
-                System.out.printf("line %d:%d Found IPv4: %s\n", line, pos, text);
+            case HalsteadLexer.OPERAND:
+                System.out.printf("line %d:%d Found OPERAND: %s\n", line, pos, text);
                 break;
-            case IPFilter.IP6:
-                System.out.printf("line %d:%d Found IPv6: %s\n", line, pos, text);
+            case HalsteadLexer.OPERATOR:
+                System.out.printf("line %d:%d Found OPERATOR: %s\n", line, pos, text);
+                break;
+            case HalsteadLexer.IGNORE:
+                System.out.printf("line %d:%d Found IGNORE: %s\n", line, pos, text);
                 break;
         }
     };

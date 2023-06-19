@@ -1,0 +1,14 @@
+graph(nodesWhite, nodesGreen, nodesRed, kantenBlack, kantenGreen, kantenRed)::=<<
+digraph G {
+ ranksep=.25;
+ edge [arrowsize=.5]
+ node [shape=circle, fontname="ArialNarrow",
+ fontsize=12, fixedsize=true, height=.45];
+ <nodesWhite:{node | <node> [style=filled, fillcolor=white];}>
+ <nodesGreen:{node | <node> [style=filled, fillcolor=green];}>
+ <nodesRed:{node | <node> [style=filled, fillcolor=red];}>
+ <kantenBlack:{kante | <kante._1> -> <kante._2> [style=filled, color=black];}; separator="\n">
+ <kantenGreen:{kante | <kante._1> -> <kante._2> [style=filled, color=green];}; separator="\n">
+ <kantenRed:{kante | <kante._1> -> <kante._2> [style=filled, color=red];}; separator="\n">
+}
+>>

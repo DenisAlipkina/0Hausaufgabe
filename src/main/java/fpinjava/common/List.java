@@ -39,6 +39,7 @@ public abstract class List<A> {
   public abstract List<Tuple<List<A>, List<A>>> split();
   public abstract Result<Tuple<A, List<A>>> headAndTail();
   public abstract Stream<A> toStream();
+  public abstract Integer sum();
 
   public <B> List<B> map(Function<A, B> f) {
     return foldRight(list(), h -> t -> new Cons<>(f.apply(h),t));
@@ -517,6 +518,11 @@ public abstract class List<A> {
     public Stream<A> toStream() {
       return Stream.empty();
     }
+
+      @Override
+      public Integer sum() {
+          return 0;
+      }
   }
 
   private static class Cons<A> extends List<A> {
@@ -723,7 +729,12 @@ public abstract class List<A> {
       return Stream.cons(() -> head, tail::toStream);
     }
 
-    private List<Tuple<List<A>, List<A>>> split_(List<A> list) {
+      @Override
+      public Integer sum() {
+          return (int) head + tail.sum();
+      }
+
+      private List<Tuple<List<A>, List<A>>> split_(List<A> list) {
       List<Tuple<List<A>, List<A>>> yss = list.tail().split();
       return yss.map(t -> new Tuple<>(t._1.cons(head), t._2)).cons(new Tuple<>(list(head), tail));
     }
